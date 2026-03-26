@@ -40,8 +40,42 @@ alert("This file last modified " + docMod); // generates alert box with time sta
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 </script>
 
+</> HTML
+	<script> 
+	var canvas = document.getElementbyId("myCanvas");
+    var ctx = canvas.getContext("2d");
 
+		// Draw rectangle
+		function drawRect() {
+			ctx.fillStyle = "blue";
+			ctx.fillRect(50, 50, 150, 100);
 
+		}
+
+		// Write your name
+		function writeName () {
+			ctx.font = "20px Arial";
+			ctx.fillStyle = "black";
+			ctx.fillText("Maryam", 60, 200); // change if you want
+		
+		}
+
+		// Load image
+		function drawImage () {
+			var img = new Image ();
+			img.src = "https://via.placeholder.com/150"; // simple image
+			img.onload = function() {
+					ctx.drawImage(img, 75, 220, 150, 100);
+			};
+		}
+
+		// Clear canvas 
+		function clearCanvas () {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+		}
+	</script> 
+	<!-- canvas.getContent("2d') lets you draw, fillRect() draws rectangle, fillText() write text, drawImage() puts the image, clearRect() erases everything -->
+		
 <style>	
 .body {
      margin: 0em;
@@ -66,13 +100,25 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>App6---HTML5-Canvas</h1>
 </div>
-	
+</> HTML 	
 <div id="content" class="w3-container">
 	<p>Content goes here.</p>
-		
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
-	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>	
+	<canvas id="myCanvas" width="300" height="400" style="border:2px solid black;"></canvas>
+
+	<br><br>
+
+	<button onclick="drawRect()">Draw Rectangle</button>
+	<button onclick="writeName()">Write Name</button>
+	<button onclick="drawImage()">Load Image</button>
+	<button onclick="clearCanvas()">Clear Canvas</button> 
+
+</div>
+	<!-- The first sentence creates a paper. Then after I made 4 buttons to draws a rectangle on the canvas, put the name on the canvas, loads an image of something on the canvas, and clears the canvas -->
+		
+	
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
